@@ -8,12 +8,11 @@ return require('packer').startup(function(use)
 	  -- or                            , branch = '0.1.x',
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
-  use {'rose-pine/neovim', as = 'rose-pine'}
+  use {'rose-pine/neovim'}
+  use {'folke/tokyonight.nvim'}
   use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
   use {'nvim-treesitter/playground'}
-  use {'theprimeagen/harpoon'}
-  use {'mbbill/undotree'}
-  use {'tpope/vim-fugitive'}
+  use {'projekt0n/github-nvim-theme'}
   use {
       'VonHeikemen/lsp-zero.nvim',
       branch = 'v2.x',

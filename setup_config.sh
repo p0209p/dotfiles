@@ -3,6 +3,5 @@ if [ "$(uname -s)" = "Linux" ]; then
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 fi
 
-cp -r alacritty/ ~/.config
 cp -r nvim/ ~/.config
 cp .tmux.conf ~/
