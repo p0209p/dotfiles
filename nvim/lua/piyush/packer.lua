@@ -16,6 +16,7 @@ return require('packer').startup(function(use)
     branch = "harpoon2",
     requires = { {"nvim-lua/plenary.nvim"} }
   }
+  use {'tpope/vim-fugitive'}
   use {'rose-pine/neovim'}
   use {'folke/tokyonight.nvim'}
   use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
