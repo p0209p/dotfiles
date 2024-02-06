@@ -57,3 +57,5 @@ lsp.setup()
 vim.diagnostic.config({
     virtual_text = true
 })
+
+vim.cmd("set rtp^=\"/home/pradhan/.opam/default/share/ocp-indent/vim")

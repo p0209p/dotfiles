@@ -18,9 +18,10 @@ return require('packer').startup(function(use)
   }
   use {'tpope/vim-fugitive'}
   use {'rose-pine/neovim'}
-  use {'folke/tokyonight.nvim'}
+  use {'navarasu/onedark.nvim'}
   use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
   use {'nvim-treesitter/playground'}
+  use {'nvim-treesitter/nvim-treesitter-context'}
   use {
       'VonHeikemen/lsp-zero.nvim',
       branch = 'v2.x',
