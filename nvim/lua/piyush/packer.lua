@@ -18,7 +18,7 @@ return require('packer').startup(function(use)
   }
   use {'tpope/vim-fugitive'}
   use {'rose-pine/neovim'}
-  use {'navarasu/onedark.nvim'}
+  use {'AlexvZyl/nordic.nvim'}
   use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
   use {'nvim-treesitter/playground'}
   use {'nvim-treesitter/nvim-treesitter-context'}
