@@ -4,4 +4,5 @@ if [ "$(uname -s)" = "Linux" ]; then
 fi
 
 cp -r nvim/ ~/.config
+cp -r alacritty/ ~/.config
 cp .tmux.conf ~/
