@@ -19,6 +19,12 @@ return require('packer').startup(function(use)
   use {'tpope/vim-fugitive'}
   use {'rose-pine/neovim'}
   use {
+        'numToStr/Comment.nvim',
+        config = function()
+            require('Comment').setup()
+        end
+  }
+  use {
         'nvim-lualine/lualine.nvim',
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
   }
