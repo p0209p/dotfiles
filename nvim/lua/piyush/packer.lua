@@ -18,15 +18,12 @@ return require('packer').startup(function(use)
   }
   use {'tpope/vim-fugitive'}
   use {'rose-pine/neovim'}
+  use {'blazkowolf/gruber-darker.nvim'}
   use {
         'numToStr/Comment.nvim',
         config = function()
             require('Comment').setup()
         end
-  }
-  use {
-        'nvim-lualine/lualine.nvim',
-        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
   }
   use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
   use {'nvim-treesitter/playground'}

@@ -11,8 +11,25 @@ require('rose-pine').setup({
     },
 })
 
-vim.cmd.colorscheme("rose-pine")
-vim.api.nvim_set_hl(0, "Normal", {bg = "none"})
-vim.api.nvim_set_hl(0, "NormalFloat", {bg = "none"})
+require("gruber-darker").setup({
+  bold = true,
+  invert = {
+    signs = false,
+    tabline = false,
+    visual = false,
+  },
+  italic = {
+    strings = false,
+    comments = false,
+    operators = false,
+    folds = false,
+  },
+  undercurl = true,
+  underline = true,
+})
+
+vim.cmd.colorscheme('gruber-darker')
+--vim.api.nvim_set_hl(0, "Normal", {bg = "none"})
+--vim.api.nvim_set_hl(0, "NormalFloat", {bg = "none"})
 
 vim.wo.fillchars='eob: '
