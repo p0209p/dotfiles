@@ -5,128 +5,42 @@ require('rose-pine').setup({
     extend_background_behind_borders = true,
 
     styles = {
-        bold = false,
+        bold = true,
         italic = false,
         transparency = true,
     },
 })
 
-require("gruber-darker").setup({
-  bold = true,
-  invert = {
-    signs = false,
-    tabline = false,
-    visual = false,
+require("tokyonight").setup({
+  -- your configuration comes here
+  -- or leave it empty to use the default settings
+  style = "night", -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
+  light_style = "day", -- The theme is used when the background is set to light
+  transparent = true, -- Enable this to disable setting the background color
+  terminal_colors = true, -- Configure the colors used when opening a `:terminal` in [Neovim](https://github.com/neovim/neovim)
+  styles = {
+    -- Style to be applied to different syntax groups
+    -- Value is any valid attr-list value for `:help nvim_set_hl`
+    comments = {italic = false},
+    keywords = {italic = false},
+    functions = {bold = true},
+    variables = {},
+    -- Background styles. Can be "dark", "transparent" or "normal"
+    sidebars = "dark", -- style for sidebars, see below
+    floats = "dark"
   },
-  italic = {
-    strings = false,
-    comments = false,
-    operators = false,
-    folds = false,
-  },
-  undercurl = true,
-  underline = true,
+  sidebars = { "qf", "help" }, -- Set a darker background on sidebar-like windows. For example: `["qf", "vista_kind", "terminal", "packer"]`
+  day_brightness = 0.3, -- Adjusts the brightness of the colors of the **Day** style. Number between 0 and 1, from dull to vibrant colors
+  hide_inactive_statusline = false, -- Enabling this option, will hide inactive statuslines and replace them with a thin border instead. Should work with the standard **StatusLine** and **LuaLine**.
+  dim_inactive = false, -- dims inactive windows
+  lualine_bold = false, -- When `true`, section headers in the lualine theme will be bold
+  on_colors = function(colors)
+      colors.border = "#565f89"
+  end
 })
 
-function CColor()
-    if not pcall(require, "colorbuddy") then
-        return
-    end
-
-    vim.opt.termguicolors = true
-
-    if vim.env.USER == "tj-wsl" then
-        rawset(require("colorbuddy").styles, "italic", require("colorbuddy").styles.none)
-    end
-
-    require("colorbuddy").colorscheme "gruvbuddy"
-    require("colorizer").setup()
-
-    local c = require("colorbuddy.color").colors
-    local Group = require("colorbuddy.group").Group
-    local g = require("colorbuddy.group").groups
-    local s = require("colorbuddy.style").styles
-
-    Group.new("@variable", c.superwhite, nil)
-
-    Group.new("GoTestSuccess", c.green, nil, s.bold)
-    Group.new("GoTestFail", c.red, nil, s.bold)
-
-    -- Group.new('Keyword', c.purple, nil, nil)
-
-    Group.new("TSPunctBracket", c.orange:light():light())
-
-    Group.new("StatuslineError1", c.red:light():light(), g.Statusline)
-    Group.new("StatuslineError2", c.red:light(), g.Statusline)
-    Group.new("StatuslineError3", c.red, g.Statusline)
-    Group.new("StatuslineError3", c.red:dark(), g.Statusline)
-    Group.new("StatuslineError3", c.red:dark():dark(), g.Statusline)
-
-    Group.new("pythonTSType", c.red)
-    Group.new("goTSType", g.Type.fg:dark(), nil, g.Type)
-
-    Group.new("typescriptTSConstructor", g.pythonTSType)
-    Group.new("typescriptTSProperty", c.blue)
-
-    -- vim.cmd [[highlight WinSeparator guifg=#4e545c guibg=None]]
-    Group.new("WinSeparator", nil, nil)
-
-    -- I don't think I like highlights for text
-    -- Group.new("LspReferenceText", nil, c.gray0:light(), s.bold)
-    -- Group.new("LspReferenceWrite", nil, c.gray0:light())
-
-    -- Group.new("TSKeyword", c.purple, nil, s.underline, c.blue)
-    -- Group.new("LuaFunctionCall", c.green, nil, s.underline + s.nocombine, g.TSKeyword.guisp)
-
-    Group.new("TSTitle", c.blue)
-
-    -- TODO: It would be nice if we could only highlight
-    -- the text with characters or something like that...
-    -- but we'll have to stick to that for later.
-    Group.new("InjectedLanguage", nil, g.Normal.bg:dark())
-
-    Group.new("LspParameter", nil, nil, s.italic)
-    Group.new("LspDeprecated", nil, nil, s.strikethrough)
-    Group.new("@function.bracket", g.Normal, g.Normal)
-    Group.new("@variable.builtin", c.purple:light():light(), g.Normal)
-
-    -- Group.new("VirtNonText", c.yellow:light():light(), nil, s.italic)
-    Group.new("VirtNonText", c.gray3:dark(), nil, s.italic)
-
-    Group.new("TreesitterContext", nil, g.Normal.bg:light())
-    Group.new("TreesitterContextLineNumber", c.blue)
-    -- hi TreesitterContextBottom gui=underline guisp=Grey
-    -- Group.new("TreesitterContextBottom", nil, nil, s.underline)
-
-    Group.new("@property", c.blue)
-    Group.new("@punctuation.bracket.rapper", c.gray3, nil, s.none)
-    Group.new("@rapper_argument", c.red, nil, s.italic)
-    Group.new("@rapper_return", c.orange:light(), nil, s.italic)
-    Group.new("@constructor.ocaml", c.orange:light(), nil, s.none)
-    Group.new("constant", c.orange, nil, s.none)
-
-    Group.new("@keyword", c.violet, nil, s.none)
-    Group.new("@keyword.faded", g.nontext.fg:light(), nil, s.none)
-    -- Group.new("@keyword.faded", c.green)
-
-    Group.new("Function", c.yellow, nil, s.none)
-
-    vim.cmd [[
-    hi link @function.call.lua LuaFunctionCall
-    hi link @lsp.type.variable.lua variable
-    hi link @lsp.type.variable.ocaml variable
-    hi link @lsp.type.variable.rust variable
-    hi link @lsp.type.namespace @namespace
-    hi link @punctuation.bracket.rapper @text.literal
-    hi link @normal Normal
-    ]]
-
-    Group.new("Normal", c.superwhite, c.gray0)
-end
-
-CColor()
-
---vim.cmd.colorscheme('gruber-darker')
+vim.cmd.colorscheme('tokyonight')
+vim.g.tokyonight_colors = {border = "#424747"}
 --vim.api.nvim_set_hl(0, "Normal", {bg = "none"})
 --vim.api.nvim_set_hl(0, "NormalFloat", {bg = "none"})
 

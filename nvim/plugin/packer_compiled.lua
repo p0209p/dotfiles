@@ -90,21 +90,6 @@ _G.packer_plugins = {
     path = "/home/pradhan/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
-  ["colorbuddy.nvim"] = {
-    loaded = true,
-    path = "/home/pradhan/.local/share/nvim/site/pack/packer/start/colorbuddy.nvim",
-    url = "https://github.com/tjdevries/colorbuddy.nvim"
-  },
-  ["gruber-darker.nvim"] = {
-    loaded = true,
-    path = "/home/pradhan/.local/share/nvim/site/pack/packer/start/gruber-darker.nvim",
-    url = "https://github.com/blazkowolf/gruber-darker.nvim"
-  },
-  ["gruvbuddy.nvim"] = {
-    loaded = true,
-    path = "/home/pradhan/.local/share/nvim/site/pack/packer/start/gruvbuddy.nvim",
-    url = "https://github.com/tjdevries/gruvbuddy.nvim"
-  },
   harpoon = {
     loaded = true,
     path = "/home/pradhan/.local/share/nvim/site/pack/packer/start/harpoon",
@@ -146,11 +131,6 @@ _G.packer_plugins = {
     path = "/home/pradhan/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
-  ["nvim-colorizer.lua"] = {
-    loaded = true,
-    path = "/home/pradhan/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua",
-    url = "https://github.com/norcalli/nvim-colorizer.lua"
-  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/home/pradhan/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
@@ -186,10 +166,10 @@ _G.packer_plugins = {
     path = "/home/pradhan/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
-  ["vim-fugitive"] = {
+  ["tokyonight.nvim"] = {
     loaded = true,
-    path = "/home/pradhan/.local/share/nvim/site/pack/packer/start/vim-fugitive",
-    url = "https://github.com/tpope/vim-fugitive"
+    path = "/home/pradhan/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
+    url = "https://github.com/folke/tokyonight.nvim"
   }
 }
 

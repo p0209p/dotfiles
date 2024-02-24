@@ -15,12 +15,8 @@ return require('packer').startup(function(use)
     branch = "harpoon2",
     requires = { {"nvim-lua/plenary.nvim"} }
   }
-  use {'tpope/vim-fugitive'}
   use {'rose-pine/neovim'}
-  use {'blazkowolf/gruber-darker.nvim'}
-  use {'tjdevries/colorbuddy.nvim'}
-  use {'tjdevries/gruvbuddy.nvim'}
-  use {'norcalli/nvim-colorizer.lua'}
+  use {'folke/tokyonight.nvim'}
   use {
       'numToStr/Comment.nvim',
       config = function()
