@@ -142,6 +142,7 @@ require('lazy').setup({
             })
         end
     },
+    {"rose-pine/neovim", name = "rose-pine"},
 
     defaults = {
         lazy = true,
