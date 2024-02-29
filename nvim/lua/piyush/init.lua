@@ -1,3 +1,3 @@
 require("piyush.remap")
-require("piyush.packer")
+require("piyush.lazy")
 require("piyush.set")
