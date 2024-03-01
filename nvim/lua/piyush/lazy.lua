@@ -20,7 +20,6 @@ require('lazy').setup({
     {'github/copilot.vim', lazy = false},
 
     {'numToStr/Comment.nvim', config = function () require('Comment').setup() end, lazy = false},
-    {'windwp/nvim-autopairs', lazy = false},
 
     {	'nvim-treesitter/nvim-treesitter', 
     	build = ':TSUpdate', 
@@ -142,7 +141,29 @@ require('lazy').setup({
             })
         end
     },
-    {"rose-pine/neovim", name = "rose-pine"},
+
+    {   "catppuccin/nvim",
+        name = "catppuccin",
+        config = function()
+            require("catppuccin").setup({
+                flavour = "mocha",
+                background = {
+                    light = "latte",
+                    dark = "mocha",
+                },
+                transparent_background = true,
+                show_end_of_buffer = false,
+                no_italic = true,
+                no_bold = false,
+                no_underline = true,
+                styles = {
+                    functions = {"bold"},
+                },
+            })
+            vim.cmd.colorscheme("catppuccin")
+            vim.wo.fillchars='eob: '
+        end
+    },
 
     defaults = {
         lazy = true,
