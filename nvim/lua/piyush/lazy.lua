@@ -17,6 +17,11 @@ require('lazy').setup({
         lazy = false
     },
 
+    {"folke/trouble.nvim", 
+        lazy = false,
+        dependencies = {"nvim-tree/nvim-web-devicons"}
+    },
+
     {'github/copilot.vim', lazy = false},
 
     {'numToStr/Comment.nvim', config = function () require('Comment').setup() end, lazy = false},
@@ -24,20 +29,20 @@ require('lazy').setup({
     {	'nvim-treesitter/nvim-treesitter', 
     	build = ':TSUpdate', 
      	lazy = false,
-	config = function () 
-		local configs = require("nvim-treesitter.configs")
+        config = function () 
+            local configs = require("nvim-treesitter.configs")
 
-		configs.setup({
-			ensure_installed = { "c", "lua", "cpp", "julia", "python"},
-			sync_install = false,
-			auto_install = false,
-			highlight = { 
-				enable = true,
-				additional_vim_regex_highlighting = false,
-			},
-			indent = { enable = true },  
-		})
-	end
+            configs.setup({
+                ensure_installed = { "c", "lua", "cpp", "julia", "python"},
+                sync_install = false,
+                auto_install = false,
+                highlight = { 
+                    enable = true,
+                    additional_vim_regex_highlighting = false,
+                },
+                indent = { enable = true },  
+            })
+        end
     },
     {'nvim-treesitter/nvim-treesitter-context', lazy = false},
 
