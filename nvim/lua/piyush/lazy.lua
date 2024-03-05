@@ -17,30 +17,31 @@ require('lazy').setup({
         lazy = false
     },
 
-    {"folke/trouble.nvim", 
+    {"folke/trouble.nvim",
         lazy = false,
         dependencies = {"nvim-tree/nvim-web-devicons"}
     },
 
     {'github/copilot.vim', lazy = false},
 
+    {'windwp/nvim-autopairs', lazy = false, event="InsertEnter", config=true},
     {'numToStr/Comment.nvim', config = function () require('Comment').setup() end, lazy = false},
 
-    {	'nvim-treesitter/nvim-treesitter', 
-    	build = ':TSUpdate', 
+    {	'nvim-treesitter/nvim-treesitter',
+    	build = ':TSUpdate',
      	lazy = false,
-        config = function () 
+        config = function ()
             local configs = require("nvim-treesitter.configs")
 
             configs.setup({
                 ensure_installed = { "c", "lua", "cpp", "julia", "python"},
                 sync_install = false,
                 auto_install = false,
-                highlight = { 
+                highlight = {
                     enable = true,
                     additional_vim_regex_highlighting = false,
                 },
-                indent = { enable = true },  
+                indent = { enable = true },
             })
         end
     },
@@ -147,26 +148,22 @@ require('lazy').setup({
         end
     },
 
-    {   "catppuccin/nvim",
-        name = "catppuccin",
+    {   "rose-pine/neovim",
+        name = "rose-pine",
         config = function()
-            require("catppuccin").setup({
-                flavour = "mocha",
-                background = {
-                    light = "latte",
-                    dark = "mocha",
-                },
-                transparent_background = true,
-                show_end_of_buffer = false,
-                no_italic = true,
-                no_bold = false,
-                no_underline = true,
+            require("rose-pine").setup({
+                variant = "main", -- auto, main, moon, or dawn
+                dark_variant = "main", -- main, moon, or dawn
+                dim_inactive_windows = false,
+                extend_background_behind_borders = true,
+
                 styles = {
-                    functions = {"bold"},
-                },
+                    bold = true,
+                    italic = false,
+                    transparency = true,
+                }
             })
-            vim.cmd.colorscheme("catppuccin")
-            vim.wo.fillchars='eob: '
+            vim.cmd("colorscheme rose-pine")
         end
     },
 

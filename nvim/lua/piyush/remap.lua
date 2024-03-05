@@ -8,13 +8,3 @@ function map(mode, lhs, rhs, opts)
 	end
 	vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
-
-map('i', '"', '""<left>')
-map('i', "'", "''<left>")
-map('i', '(', '()<left>')
-map('i', '{', '{}<left>')
-map('i', '[', '[]<left>')
-map('i', '{<CR>', '{<CR>}<ESC>O')
-map('i', '[<CR>', '[<CR>]<ESC>O')
-map('i', '(<CR>', '(<CR>)<ESC>O')
-map('i', '{;<CR>', '{<CR>};<ESC>O')

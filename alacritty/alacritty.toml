@@ -1,0 +1,9 @@
+[window]
+opacity = 0.95
+
+[colors.primary]
+background = "#000000"
+
+[font]
+normal = {family = "JuliaMono", style = "Regular"}
+size = 11
