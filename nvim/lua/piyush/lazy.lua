@@ -21,7 +21,6 @@ require('lazy').setup({
         lazy = false,
         dependencies = {"nvim-tree/nvim-web-devicons"}
     },
-
     {'github/copilot.vim', lazy = false},
 
     {'windwp/nvim-autopairs', lazy = false, event="InsertEnter", config=true},
@@ -58,6 +57,7 @@ require('lazy').setup({
             vim.g.lsp_zero_extend_lspconfig = 0
         end,
     },
+
     {
         'williamboman/mason.nvim',
         lazy = false,
@@ -147,6 +147,11 @@ require('lazy').setup({
             })
         end
     },
+
+    {'nvim-tree/nvim-web-devicons', lazy=false},
+    {'craftzdog/solarized-osaka.nvim', lazy=false},
+    {'rose-pine/neovim', lazy=false},
+    {'JuliaEditorSupport/julia-vim', lazy=false},
 
     defaults = {
         lazy = true,

@@ -11,8 +11,4 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-if vim.g.neovide then
-    vim.o.guifont = "JuliaMono:h11"
-end
-
 require("piyush")
