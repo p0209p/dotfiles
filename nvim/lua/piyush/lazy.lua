@@ -33,7 +33,7 @@ require('lazy').setup({
             local configs = require("nvim-treesitter.configs")
 
             configs.setup({
-                ensure_installed = { "c", "lua", "cpp", "julia", "python"},
+                ensure_installed = { "c", "lua", "cpp", "julia", "python", "vimdoc", "vim"},
                 sync_install = false,
                 auto_install = false,
                 highlight = {
@@ -149,9 +149,11 @@ require('lazy').setup({
     },
 
     {'nvim-tree/nvim-web-devicons', lazy=false},
-    {'craftzdog/solarized-osaka.nvim', lazy=false},
-    {'rose-pine/neovim', lazy=false},
     {'JuliaEditorSupport/julia-vim', lazy=false},
+
+    {'p0209p/naysayer.vim', lazy = false},
+
+    {'nvim-lualine/lualine.nvim', dependencies = {'nvim-tree/nvim-web-devicons'}},
 
     defaults = {
         lazy = true,
