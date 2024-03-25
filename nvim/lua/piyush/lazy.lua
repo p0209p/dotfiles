@@ -2,14 +2,14 @@ require('lazy').setup({
     {'nvim-telescope/telescope.nvim', tag = '0.1.2',
         dependencies = {'nvim-lua/plenary.nvim'},
         lazy = false,
-	config = function()
-		local builtin = require('telescope.builtin')
-		vim.keymap.set('n', '<leader>f', builtin.find_files, {})
-		vim.keymap.set('n', '<C-p>', builtin.git_files, {})
-		vim.keymap.set('n', '<leader>ps', function()
-			builtin.grep_string({ search = vim.fn.input("Grep > ") });
-		end)
-	end
+        config = function()
+            local builtin = require('telescope.builtin')
+            vim.keymap.set('n', '<leader>f', builtin.find_files, {})
+            vim.keymap.set('n', '<C-p>', builtin.git_files, {})
+            vim.keymap.set('n', '<leader>ps', function()
+                builtin.grep_string({ search = vim.fn.input("Grep > ") });
+            end)
+        end
     },
 
     {'nvim-telescope/telescope-fzf-native.nvim',
@@ -105,7 +105,6 @@ require('lazy').setup({
             {'williamboman/mason-lspconfig.nvim'},
         },
         config = function()
-            -- This is where all the LSP shenanigans will live
             local lsp_zero = require('lsp-zero')
             lsp_zero.extend_lspconfig()
 
@@ -135,13 +134,16 @@ require('lazy').setup({
             })
 
             require('mason-lspconfig').setup({
-                ensure_installed = {'clangd', 'pyright'},
+                ensure_installed = {'clangd', 'pyright', 'julials'},
                 handlers = {
                     lsp_zero.default_setup,
                     lua_ls = function()
                         -- (Optional) Configure lua language server for neovim
                         local lua_opts = lsp_zero.nvim_lua_ls()
                         require('lspconfig').lua_ls.setup(lua_opts)
+                    end,
+                    julials = function()
+                        require('lspconfig').julials.setup({julia_env_path = "~/.julia/environments/v1.10"})
                     end,
                 }
             })
@@ -151,9 +153,17 @@ require('lazy').setup({
     {'nvim-tree/nvim-web-devicons', lazy=false},
     {'JuliaEditorSupport/julia-vim', lazy=false},
 
-    {'p0209p/naysayer.vim', lazy = false},
+    {'piyush-ppradhan/naysayer.vim', lazy = false},
+    {'thimc/gruber-darker.nvim', lazy = false},
 
     {'nvim-lualine/lualine.nvim', dependencies = {'nvim-tree/nvim-web-devicons'}},
+
+    -- Debugger
+    {'mfussenegger/nvim-dap', lazy = false},
+    {'rcarriga/nvim-dap-ui', dependencies = {'mfussenegger/nvim-dap', 'nvim-neotest/nvim-nio'}, lazy = false},
+    {'nvim-telescope/telescope-dap.nvim', lazy = false},
+    {'mfussenegger/nvim-dap-python', lazy = false},
+    {'theHamsta/nvim-dap-virtual-text', lazy = false},
 
     defaults = {
         lazy = true,
