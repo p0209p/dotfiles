@@ -1,6 +1,21 @@
-require("gruber-darker").setup({
-    transparent = true,
-    bold = true,
+require("rose-pine").setup({
+    variant = "main",
+    dark_variant = "main",
+    dim_inactive_windows = false,
+    extend_background_behind_borders = true,
+
+    enable = {
+        terminal = true,
+        legacy_highlights = true,
+        migrations = true,
+    },
+
+    styles = {
+        bold = true,
+        italic = false,
+        transparency = true,
+    },
 })
---vim.cmd.colorscheme("naysayer")
-vim.cmd.colorscheme("gruber-darker")
+
+-- vim.cmd.colorscheme("naysayer")
+vim.cmd.colorscheme("rose-pine")

@@ -1,0 +1,18 @@
+alias vim="nvim"
+function init_conda {
+# Put conda code here
+}
+
+alias init_conda="init_conda"
+alias tmux="tmux -2"
+alias pytest="pytest -v"
+
+# Ctrl+ f for tmux sessionizer
+bind -x '"\C-f": "sh /home/pradhan/Tools/Dotfiles/tmux_sessionizer.sh"'
+
+# Auto-run tmux if it is installed and not already running
+if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+  exec tmux
+else
+  echo "tmux not installed or already running"
+fi

@@ -154,9 +154,7 @@ require('lazy').setup({
     {'JuliaEditorSupport/julia-vim', lazy=false},
 
     {'piyush-ppradhan/naysayer.vim', lazy = false},
-    {'thimc/gruber-darker.nvim', lazy = false},
-
-    {'nvim-lualine/lualine.nvim', dependencies = {'nvim-tree/nvim-web-devicons'}},
+    {'rose-pine/neovim', name = "rose-pine", lazy = false},
 
     -- Debugger
     {'mfussenegger/nvim-dap', lazy = false},
