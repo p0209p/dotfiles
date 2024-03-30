@@ -152,16 +152,7 @@ require('lazy').setup({
 
     {'nvim-tree/nvim-web-devicons', lazy=false},
     {'JuliaEditorSupport/julia-vim', lazy=false},
-
-    {'piyush-ppradhan/naysayer.vim', lazy = false},
-    {'rose-pine/neovim', name = "rose-pine", lazy = false},
-
-    -- Debugger
-    {'mfussenegger/nvim-dap', lazy = false},
-    {'rcarriga/nvim-dap-ui', dependencies = {'mfussenegger/nvim-dap', 'nvim-neotest/nvim-nio'}, lazy = false},
-    {'nvim-telescope/telescope-dap.nvim', lazy = false},
-    {'mfussenegger/nvim-dap-python', lazy = false},
-    {'theHamsta/nvim-dap-virtual-text', lazy = false},
+    {'tjdevries/colorbuddy.nvim', lazy = false},
 
     defaults = {
         lazy = true,
