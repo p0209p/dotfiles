@@ -152,12 +152,7 @@ require('lazy').setup({
 
     {'nvim-tree/nvim-web-devicons', lazy=false},
     {'JuliaEditorSupport/julia-vim', lazy=false},
-
-    {'nvim-lualine/lualine.nvim',
-        dependencies = {'nvim-tree/nvim-web-devicons'}
-    },
-
-    {'tjdevries/colorbuddy.nvim', lazy = false},
+    {'olivercederborg/poimandres.nvim', lazy=false},
 
     -- Debugging
     {'mfussenegger/nvim-dap', lazy = false},
@@ -166,7 +161,6 @@ require('lazy').setup({
         lazy = false
     },
     {'rcarriga/nvim-dap-ui', lazy = false},
-    {'mfussenegger/nvim-dap-python', lazy = false},
 
     -- Git integration
     {'tpope/vim-fugitive', lazy = false},

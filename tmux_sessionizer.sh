@@ -3,7 +3,7 @@
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$(find ~/Tools ~/Programs/ ~/Programs/python ~/Programs/C ~/Programs/julia ~/Programs/jscript ~/Programs/MATLAB -mindepth 1 -maxdepth 1 -type d | fzf)
+    selected=$(find ~/Tools ~/Programs/ ~/Programs/ocaml ~/Programs/python ~/Programs/C ~/Programs/julia ~/Programs/jscript ~/Programs/MATLAB -mindepth 1 -maxdepth 1 -type d | fzf)
 fi
 
 if [[ -z $selected ]]; then

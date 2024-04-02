@@ -1,9 +1,9 @@
-vim.cmd.colorscheme('gruvbuddy')
--- vim.api.nvim_command('hi StatusLineNC guibg=NONE guifg=#ffffff gui=NONE')
--- vim.api.nvim_command('hi StatusLine guibg=NONE guifg=#ffffff gui=NONE')
--- vim.api.nvim_command('hi StatusLineTerm guibg=NONE guifg=#ffffff')
-vim.api.nvim_command('hi LineNr guibg=NONE guifg=#827d7d')
--- vim.api.nvim_command('hi SignColumn guibg=NONE')
-vim.api.nvim_command('hi EndofBuffer guibg=NONE guifg=#000000 gui=NONE')
--- vim.api.nvim_command('hi Normal guibg=NONE')
--- vim.api.nvim_command('hi VertSplit guibg=NONE guifg=NONE')
+require('poimandres').setup {
+  bold_vert_split = false,
+  dim_nc_background = false,
+  disable_background = true,
+  disable_float_background = true,
+  disable_italics = true,
+}
+
+vim.cmd.colorscheme("poimandres")

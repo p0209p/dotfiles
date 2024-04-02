@@ -10,7 +10,6 @@ vim.keymap.set("n", "<leader>du", function() require('dapui').open() end)
 
 require("dapui").setup()
 require("nvim-dap-virtual-text").setup()
-require("dap-python").setup()
 
 local dap, dapui = require("dap"), require("dapui")
 dap.listeners.before.attach.dapui_config = function()
@@ -28,7 +27,3 @@ end
 dap.listeners.before.event_exited.dapui_config = function()
   dapui.close()
 end
-
-vim.keymap.set("n", "<leader>dn", function() require('dap-python').test_method() end)
-vim.keymap.set("n", "<leader>df", function() require('dap-python').test_class() end)
-vim.keymap.set("v", "<leader>ds", function() require('dap-python').debug_selection() end)
