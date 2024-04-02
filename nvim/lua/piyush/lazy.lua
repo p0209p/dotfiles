@@ -182,7 +182,7 @@ require("lazy").setup({
 	{ "olivercederborg/poimandres.nvim", lazy = false },
 
 	-- Linter and Formatter
-	{ "mfussenegger/nvim-lint", lazy = false },
+	{ "mfussenegger/nvim-lint", lazy = false, event = { "BufReadPre", "BufNewFile" } },
 	{ "stevearc/conform.nvim", lazy = false, event = { "BufReadPre", "BufNewFile" } },
 
 	-- Debugging
