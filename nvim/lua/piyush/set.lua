@@ -18,6 +18,10 @@ vim.opt.updatetime = 50
 vim.opt.autoread = true
 vim.cmd("set clipboard=unnamedplus")
 vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "CursorHoldI", "FocusGained" }, {
-  command = "if mode() != 'c' | checktime | endif",
-  pattern = { "*" },
+	command = "if mode() != 'c' | checktime | endif",
+	pattern = { "*" },
 })
+vim.o.expandtab = true
+vim.o.smartindent = true
+vim.o.tabstop = 4
+vim.o.softtabstop = 4
