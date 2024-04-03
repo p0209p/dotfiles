@@ -1,11 +1,6 @@
 vim.opt.guicursor = ""
 vim.opt.nu = true
 vim.opt.relativenumber = true
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
-vim.opt.smartindent = true
 vim.opt.wrap = false
 vim.opt.swapfile = false
 vim.opt.backup = false
@@ -21,7 +16,9 @@ vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "CursorHoldI", "FocusGai
 	command = "if mode() != 'c' | checktime | endif",
 	pattern = { "*" },
 })
-vim.o.expandtab = true
-vim.o.smartindent = true
-vim.o.tabstop = 4
-vim.o.softtabstop = 4
+-- vim.opt.expandtab = true
+-- vim.opt.smartindent = true
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.colorcolumn = "80"

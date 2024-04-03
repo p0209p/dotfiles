@@ -179,7 +179,7 @@ require("lazy").setup({
 
 	{ "nvim-tree/nvim-web-devicons", lazy = false },
 	{ "JuliaEditorSupport/julia-vim", lazy = false },
-	{ "olivercederborg/poimandres.nvim", lazy = false },
+	{ "folke/tokyonight.nvim", lazy = false },
 
 	-- Linter and Formatter
 	{ "mfussenegger/nvim-lint", lazy = false, event = { "BufReadPre", "BufNewFile" } },
