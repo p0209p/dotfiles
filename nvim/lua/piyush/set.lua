@@ -23,9 +23,18 @@ vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "CursorHoldI", "FocusGai
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
-vim.opt.colorcolumn = "80"
+-- vim.opt.colorcolumn = "80"
 
 vim.cmd("set path+=**")
 vim.cmd("set wildmenu")
 vim.cmd("let g:netrw_banner = 0")
 vim.cmd("let g:netrw_liststyle = 3")
+
+vim.api.nvim_create_autocmd("CmdlineLeave", {
+	group = “someGroup”,
+	callback = function()
+		vim.fn.timer_start(1000, function()
+			print(" ")
+		end)
+	end
+})
