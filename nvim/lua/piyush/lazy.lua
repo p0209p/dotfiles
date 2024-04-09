@@ -1,25 +1,4 @@
 require("lazy").setup({
-	{
-		"nvim-telescope/telescope.nvim",
-		tag = "0.1.2",
-		dependencies = { "nvim-lua/plenary.nvim" },
-		lazy = false,
-		config = function()
-			local builtin = require("telescope.builtin")
-			vim.keymap.set("n", "<leader>f", builtin.find_files, {})
-			vim.keymap.set("n", "<C-p>", builtin.git_files, {})
-			vim.keymap.set("n", "<leader>ps", function()
-				builtin.grep_string({ search = vim.fn.input("Grep > ") })
-			end)
-		end,
-	},
-
-	{
-		"nvim-telescope/telescope-fzf-native.nvim",
-		build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
-		lazy = false,
-	},
-
 	{ "folke/trouble.nvim", lazy = false, dependencies = { "nvim-tree/nvim-web-devicons" } },
 	{ "github/copilot.vim", lazy = false },
 
@@ -51,7 +30,6 @@ require("lazy").setup({
 			})
 		end,
 	},
-	-- { "nvim-treesitter/nvim-treesitter-context", lazy = false },
 
 	{
 		"VonHeikemen/lsp-zero.nvim",
