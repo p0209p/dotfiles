@@ -42,7 +42,7 @@ require("lazy").setup({
 			configs.setup({
 				ensure_installed = { "c", "lua", "cpp", "julia", "python", "vimdoc", "vim" },
 				sync_install = false,
-				auto_install = false,
+				auto_install = true,
 				highlight = {
 					enable = true,
 					additional_vim_regex_highlighting = false,
@@ -51,7 +51,7 @@ require("lazy").setup({
 			})
 		end,
 	},
-	{ "nvim-treesitter/nvim-treesitter-context", lazy = false },
+	-- { "nvim-treesitter/nvim-treesitter-context", lazy = false },
 
 	{
 		"VonHeikemen/lsp-zero.nvim",
@@ -165,7 +165,6 @@ require("lazy").setup({
 				handlers = {
 					lsp_zero.default_setup,
 					lua_ls = function()
-						-- (Optional) Configure lua language server for neovim
 						local lua_opts = lsp_zero.nvim_lua_ls()
 						require("lspconfig").lua_ls.setup(lua_opts)
 					end,
@@ -179,20 +178,10 @@ require("lazy").setup({
 
 	{ "nvim-tree/nvim-web-devicons", lazy = false },
 	{ "JuliaEditorSupport/julia-vim", lazy = false },
-	{ "folke/tokyonight.nvim", lazy = false },
+	{ "rose-pine/neovim", lazy = false},
 
 	-- Linter and Formatter
-	{ "mfussenegger/nvim-lint", lazy = false, event = { "BufReadPre", "BufNewFile" } },
 	{ "stevearc/conform.nvim", lazy = false, event = { "BufReadPre", "BufNewFile" } },
-
-	-- Debugging
-	{ "mfussenegger/nvim-dap", lazy = false },
-	{
-		"theHamsta/nvim-dap-virtual-text",
-		dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
-		lazy = false,
-	},
-	{ "rcarriga/nvim-dap-ui", lazy = false },
 
 	-- Git integration
 	{ "tpope/vim-fugitive", lazy = false },
