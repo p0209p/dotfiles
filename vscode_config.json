@@ -1,0 +1,117 @@
+{
+  "telemetry.telemetryLevel": "off",
+
+  "breadcrumbs.enabled": false,
+
+  "editor.lineNumbers": "relative",
+  "editor.fontSize": 15,
+  "editor.minimap.enabled": false,
+  "editor.scrollBeyondLastLine": false,
+  "editor.find.autoFindInSelection": "always",
+  "editor.guides.indentation": false,
+  "editor.lineDecorationsWidth": 15,
+  "editor.glyphMargin": true,
+  "editor.folding": false,
+  "editor.bracketPairColorization.enabled": false,
+
+  "workbench.reduceMotion": "on",
+  "workbench.activityBar.location": "hidden", 
+  "workbench.layoutControl.enabled": false,
+  "workbench.colorCustomizations": {
+    //"editorLineNumber.activeForeground": "#ff0000",
+    "editorLineNumber.foreground": "#686666",
+    "editor.background": "#191919",
+    "statusBar.background": "#191919",
+    "sideBar.background": "#191919",
+    "sideBar.border": "#323131",
+    "titleBar.activeBackground": "#191919",
+    "tab.activeBackground": "#191919",
+    "tab.inactiveBackground": "#252525",
+    "editorGroupHeader.noTabsBackground": "#191919",
+    "editorGroupHeader.tabsBackground": "#191919",
+    "editorHoverWidget.background": "#191919",
+    "quickInput.background": "#191919",
+    "tab.activeBorderTop": "#9f9f9f"
+  },
+
+  "window.commandCenter": false,
+  "window.titleBarStyle": "custom",
+  "window.zoomLevel": 0.3,
+  //"window.density.editorTabHeight": "compact", 
+  "workbench.colorTheme": "Predawn",
+
+  "terminal.integrated.fontSize": 15,
+  "terminal.integrated.commandsToSkipShell": [
+    "github.copilot.terminal.suggestCommand",
+    "language-julia.interrupt"
+  ],
+
+  "github.copilot.enable": {
+    "*": false,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  },
+
+  // Vim Config
+  "vim.handleKeys": {
+    "<C-p>": false,
+    "<C-`>": false
+  },
+  "vim.useSystemClipboard": true,
+  "vim.incsearch": true,
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {"before": ["space",  "f"],  "commands": ["workbench.action.quickOpen"],},
+    {"before": ["space",  "r"],  "commands": ["workbench.action.showCommands"],}
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {"before": [">"], "commands": ["editor.action.indentLines"]},
+    {"before": ["<"], "commands": ["editor.action.outdentLines"]},
+  ],
+  "vim.mouseSelectionGoesIntoVisualMode": true,
+
+  // Language Config
+  "black-formatter.path": [
+    "/Users/pradhan/.venv/formatter/bin/pyink"
+  ],
+  "[python]": {
+    "editor.formatOnType": true,
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true,
+  },
+
+  "C_Cpp.clang_format_fallbackStyle": "Google",
+  "C_Cpp.clang_format_style": "Google",
+  "[c]": {
+    "editor.wordBasedSuggestions": "off",
+    "editor.suggest.insertMode": "replace",
+    "editor.semanticHighlighting.enabled": true,
+    "editor.formatOnSave": false,
+  },
+  "[cpp]": { 
+    "editor.wordBasedSuggestions": "off",
+    "editor.suggest.insertMode": "replace",
+    "editor.semanticHighlighting.enabled": true,
+    "editor.formatOnSave": true
+  },
+
+  "julia.symbolCacheDownload": true,
+  "julia.enableTelemetry": false,
+  "[julia]": {
+    "editor.quickSuggestions": {
+      "other": "on",
+      "comments": "off",
+      "strings": "off"
+    },
+    "editor.wordSeparators": "`~#$%^&*()-=+[{]}\\|;:'\",.<>/?",
+    "editor.formatOnSave": true
+  },
+  "[ocaml]": {
+    "editor.formatOnSave": true
+  },
+ 
+  "cmake.pinnedCommands": ["cmake.launchTarget"],
+  "cmake.showConfigureWithDebuggerNotification": false,
+  "workbench.iconTheme": "vscode-jetbrains-icon-theme-2023-dark",
+  "workbench.startupEditor": "none",
+}
