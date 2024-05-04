@@ -177,7 +177,7 @@ require("lazy").setup({
 
 	{ "nvim-tree/nvim-web-devicons", lazy = false },
 	{ "JuliaEditorSupport/julia-vim", lazy = false },
-	{ "rose-pine/neovim", lazy = false},
+	{ "rose-pine/neovim", lazy = false },
 
 	-- Linter and Formatter
 	{ "stevearc/conform.nvim", lazy = false, event = { "BufReadPre", "BufNewFile" } },

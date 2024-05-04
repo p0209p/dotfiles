@@ -17,8 +17,8 @@
   "workbench.reduceMotion": "on",
   "workbench.activityBar.location": "hidden", 
   "workbench.layoutControl.enabled": false,
+  "workbench.startupEditor": "none",
   "workbench.colorCustomizations": {
-    //"editorLineNumber.activeForeground": "#ff0000",
     "editorLineNumber.foreground": "#686666",
     "editor.background": "#191919",
     "statusBar.background": "#191919",
@@ -36,8 +36,7 @@
 
   "window.commandCenter": false,
   "window.titleBarStyle": "custom",
-  "window.zoomLevel": 0.3,
-  //"window.density.editorTabHeight": "compact", 
+  "window.zoomLevel": 0.25,
   "workbench.colorTheme": "Predawn",
 
   "terminal.integrated.fontSize": 15,
@@ -53,7 +52,6 @@
     "scminput": false
   },
 
-  // Vim Config
   "vim.handleKeys": {
     "<C-p>": false,
     "<C-`>": false
@@ -70,14 +68,13 @@
   ],
   "vim.mouseSelectionGoesIntoVisualMode": true,
 
-  // Language Config
   "black-formatter.path": [
     "/Users/pradhan/.venv/formatter/bin/pyink"
   ],
   "[python]": {
     "editor.formatOnType": true,
     "editor.defaultFormatter": "ms-python.black-formatter",
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": true
   },
 
   "C_Cpp.clang_format_fallbackStyle": "Google",
@@ -86,7 +83,7 @@
     "editor.wordBasedSuggestions": "off",
     "editor.suggest.insertMode": "replace",
     "editor.semanticHighlighting.enabled": true,
-    "editor.formatOnSave": false,
+    "editor.formatOnSave": false
   },
   "[cpp]": { 
     "editor.wordBasedSuggestions": "off",
@@ -106,12 +103,8 @@
     "editor.wordSeparators": "`~#$%^&*()-=+[{]}\\|;:'\",.<>/?",
     "editor.formatOnSave": true
   },
-  "[ocaml]": {
-    "editor.formatOnSave": true
-  },
  
   "cmake.pinnedCommands": ["cmake.launchTarget"],
   "cmake.showConfigureWithDebuggerNotification": false,
   "workbench.iconTheme": "vscode-jetbrains-icon-theme-2023-dark",
-  "workbench.startupEditor": "none",
 }
