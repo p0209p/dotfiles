@@ -4,6 +4,7 @@ require("conform").setup({
 		python = { "isort", "pyink" },
 		c = { "clang-format" },
 		cpp = { "clang-format" },
+		go = { "gofumpt" },
 	},
 	format_on_save = function(bufnr)
 		-- Disable autoformat on certain filetypes
@@ -32,6 +33,18 @@ require("conform").setup({
 		-- ...additional logic...
 		return { lsp_fallback = true }
 	end,
+
+	formatters = {
+		pyink = {
+			command = "pyink",
+			args = {
+				"--stdin-filename",
+				"$FILENAME",
+				"--quiet",
+				"-",
+			},
+		},
+	},
 })
 
 -- Define keybinding for formatting

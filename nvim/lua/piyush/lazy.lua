@@ -1,7 +1,7 @@
 require("lazy").setup({
 	{
 		"nvim-telescope/telescope.nvim",
-		tag = "0.1.2",
+		--tag = "0.1.2",
 		dependencies = { "nvim-lua/plenary.nvim" },
 		lazy = false,
 		config = function()
@@ -19,9 +19,6 @@ require("lazy").setup({
 		build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
 		lazy = false,
 	},
-
-	{ "folke/trouble.nvim", lazy = false, dependencies = { "nvim-tree/nvim-web-devicons" } },
-	{ "github/copilot.vim", lazy = false },
 
 	{ "windwp/nvim-autopairs", lazy = false, event = "InsertEnter", config = true },
 	{
@@ -177,13 +174,43 @@ require("lazy").setup({
 
 	{ "nvim-tree/nvim-web-devicons", lazy = false },
 	{ "JuliaEditorSupport/julia-vim", lazy = false },
+<<<<<<< HEAD
 	{ "rose-pine/neovim", lazy = false },
+=======
+	{ "folke/tokyonight.nvim", lazy = false },
+
+	-- Nice UI
+	{
+		"folke/noice.nvim",
+		event = "VeryLazy",
+		opts = {},
+		dependencies = {
+			"MunifTanjim/nui.nvim",
+			"rcarriga/nvim-notify",
+		},
+	},
+>>>>>>> cb358a7 (Latest config)
 
 	-- Linter and Formatter
 	{ "stevearc/conform.nvim", lazy = false, event = { "BufReadPre", "BufNewFile" } },
 
 	-- Git integration
 	{ "tpope/vim-fugitive", lazy = false },
+
+	-- Lua Line
+	{ "nvim-lualine/lualine.nvim", lazy = false },
+
+	-- Tab line
+	{
+		"romgrk/barbar.nvim",
+		dependencies = {
+			"lewis6991/gitsigns.nvim",
+			"nvim-tree/nvim-web-devicons",
+		},
+		init = function()
+			vim.g.barbar_auto_setup = true
+		end,
+	},
 
 	defaults = {
 		lazy = true,

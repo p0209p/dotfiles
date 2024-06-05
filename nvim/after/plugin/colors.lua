@@ -1,20 +1,17 @@
-require("rose-pine").setup({
-    variant = "main",
-    dark_variant = "main",
-    dim_inactive_windows = false,
-    extend_background_behind_borders = true,
-
-    enable = {
-        terminal = true,
-        legacy_highlights = true,
-        migrations = true,
-    },
-
-    styles = {
-        bold = true,
-        italic = false,
-        transparency = true,
-    },
+require("tokyonight").setup({
+	style = "night",
+	light_style = "day",
+	transparent = true,
+	terminal_colors = true,
+	styles = {
+		comments = { italic = false },
+		keywords = { italic = false },
+		functions = {},
+		variables = {},
+		sidebars = "dark",
+		floats = "dark",
+	},
+	sidebars = { "qf", "help" },
 })
 
-vim.cmd.colorscheme("rose-pine")
+vim.cmd.colorscheme("tokyonight")
