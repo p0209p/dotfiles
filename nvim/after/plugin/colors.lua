@@ -1,17 +1,14 @@
-require("tokyonight").setup({
-	style = "night",
-	light_style = "day",
-	transparent = true,
-	terminal_colors = true,
+require("rose-pine").setup({
+	disable_background = true,
 	styles = {
-		comments = { italic = false },
-		keywords = { italic = false },
-		functions = {},
-		variables = {},
-		sidebars = "dark",
-		floats = "dark",
+		italic = false,
 	},
-	sidebars = { "qf", "help" },
 })
 
-vim.cmd.colorscheme("tokyonight")
+vim.cmd.colorscheme("rose-pine")
+vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+
+require("notify").setup({
+	background_colour = "#000000",
+})

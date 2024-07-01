@@ -174,10 +174,7 @@ require("lazy").setup({
 
 	{ "nvim-tree/nvim-web-devicons", lazy = false },
 	{ "JuliaEditorSupport/julia-vim", lazy = false },
-<<<<<<< HEAD
 	{ "rose-pine/neovim", lazy = false },
-=======
-	{ "folke/tokyonight.nvim", lazy = false },
 
 	-- Nice UI
 	{
@@ -189,7 +186,6 @@ require("lazy").setup({
 			"rcarriga/nvim-notify",
 		},
 	},
->>>>>>> cb358a7 (Latest config)
 
 	-- Linter and Formatter
 	{ "stevearc/conform.nvim", lazy = false, event = { "BufReadPre", "BufNewFile" } },
