@@ -114,6 +114,17 @@ ins_left({
 })
 
 ins_left({
+	"diff",
+	symbols = { added = " ", modified = "󰝤 ", removed = " " },
+	diff_color = {
+		added = { fg = colors.green },
+		modified = { fg = colors.orange },
+		removed = { fg = colors.red },
+	},
+	cond = conditions.hide_in_width,
+})
+
+ins_left({
 	function()
 		return "%="
 	end,
@@ -140,17 +151,6 @@ ins_left({
 	end,
 	color = { fg = colors.white },
 	padding = { left = 1, right = 0 },
-})
-
-ins_right({
-	"diff",
-	symbols = { added = " ", modified = "󰝤 ", removed = " " },
-	diff_color = {
-		added = { fg = colors.green },
-		modified = { fg = colors.orange },
-		removed = { fg = colors.red },
-	},
-	cond = conditions.hide_in_width,
 })
 
 lualine.setup(config)
